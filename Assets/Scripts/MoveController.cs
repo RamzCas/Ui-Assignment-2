@@ -19,23 +19,23 @@ public class MoveController : MonoBehaviour /*IBeginDragHandler, IDragHandler, I
         transform.position = MousWorldPos() + offset;
     }
 
-    //private void OnMouseUp()
-    //{
-    //    collider2D.enabled = false;
-    //    var rayOrigin = Camera.main.transform.position;
-    //    var rayDirection = MousWorldPos() - Camera.main.transform.position;
-    //    RaycastHit2D hitInfo;
+    private void OnMouseUp()
+    {
+        collider2D.enabled = false;
+        var rayOrigin = Camera.main.transform.position;
+        var rayDirection = MousWorldPos() - Camera.main.transform.position;
+        RaycastHit2D hitInfo;
 
-    //    if (hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
-    //    {
-    //        if (hitInfo.transform.tag == TagPoint)
-    //        {
-    //            transform.position = hitInfo.transform.position + new Vector3(0, 0, -0.01f);
-    //        }
-    //    }
+        if (hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
+        {
+            if (hitInfo.transform.tag == TagPoint)
+            {
+                transform.position = hitInfo.transform.position + new Vector3(0, 0, -0.01f);
+            }
+        }
 
-    //    collider2D.enabled = true;
-    //}
+        collider2D.enabled = true;
+    }
 
 
     Vector3 MousWorldPos()
