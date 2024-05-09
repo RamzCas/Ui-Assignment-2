@@ -3,39 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MoveController : MonoBehaviour /*IBeginDragHandler, IDragHandler, IEndDragHandler*/
+public class MoveController : MonoBehaviour ,IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     Vector3 offset;
-    Collider2D collider2D;
-    public string TagPoint = "DropPoint";
+    //Collider2D collider2D;
+    //public string TagPoint = "DropPoint";
 
-    private void OnMouseDown()
-    {
-        offset = transform.position - MousWorldPos();
-    }
+    //private void OnMouseDown()
+    //{
+    //    offset = transform.position - MousWorldPos();
+    //}
 
-    private void OnMouseDrag()
-    {
-        transform.position = MousWorldPos() + offset;
-    }
+    //private void OnMouseDrag()
+    //{
+    //    transform.position = MousWorldPos() + offset;
+    //}
 
-    private void OnMouseUp()
-    {
-        collider2D.enabled = false;
-        var rayOrigin = Camera.main.transform.position;
-        var rayDirection = MousWorldPos() - Camera.main.transform.position;
-        RaycastHit2D hitInfo;
+    //private void OnMouseUp()
+    //{
+    //    collider2D.enabled = false;
+    //    var rayOrigin = Camera.main.transform.position;
+    //    var rayDirection = MousWorldPos() - Camera.main.transform.position;
+    //    RaycastHit2D hitInfo;
 
-        if (hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
-        {
-            if (hitInfo.transform.tag == TagPoint)
-            {
-                transform.position = hitInfo.transform.position + new Vector3(0, 0, -0.01f);
-            }
-        }
+    //    if (hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
+    //    {
+    //        if (hitInfo.transform.tag == TagPoint)
+    //        {
+    //            transform.position = hitInfo.transform.position + new Vector3(0, 0, -0.01f);
+    //        }
+    //    }
 
-        collider2D.enabled = true;
-    }
+    //    collider2D.enabled = true;
+   // }
 
 
     Vector3 MousWorldPos()
@@ -45,19 +45,18 @@ public class MoveController : MonoBehaviour /*IBeginDragHandler, IDragHandler, I
         return Camera.main.ScreenToWorldPoint(mouseScreenPos);
 
      }
-        //public void OnBeginDrag(PointerEventData eventData)
-        //{
-        //    Debug.Log("DragBegin");
-        //}
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        Debug.Log("DragBegin");
+    }
 
-        //public void OnDrag(PointerEventData eventData)
-        //{
-        //    Debug.Log("Dragging");
-        //    transform.position = Input.mousePosition;
-        //}
+    public void OnDrag(PointerEventData eventData)
+    {
+        Debug.Log("Dragging");
+    }
 
-        //public void OnEndDrag(PointerEventData eventData)
-        //{
-        //    Debug.Log("DragStop");
-        //}
- }
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        Debug.Log("DragStop");
+    }
+}

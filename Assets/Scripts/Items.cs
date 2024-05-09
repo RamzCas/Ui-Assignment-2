@@ -10,10 +10,10 @@ public class Items : MonoBehaviour
     public GameObject Armor;
     void Start()
     {
-        Sword.SetActive(false);
-        Shield.SetActive(false);    
-        Position.SetActive(false);
-        Armor.SetActive(false);
+        //Sword.SetActive(false);
+        //Shield.SetActive(false);    
+        //Position.SetActive(false);
+        //Armor.SetActive(false);
     }
 
    
