@@ -34,6 +34,7 @@ public class Buy : MonoBehaviour
 
             //Sword.SetActive(true);
             //Sword.transform.position = PackSpace1.transform.position;
+            
 
             Instantiate(Sword);
         }
