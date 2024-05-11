@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Buy : MonoBehaviour
 {
@@ -11,15 +12,16 @@ public class Buy : MonoBehaviour
     public Text SwordAmount;
     public int AmountOfSwords;
     public GameObject Sword;
+    public Button SwordButton;
 
-    //public GameObject PackSpace1;
+    public GameObject PackSpace1;
     //public GameObject PackSpace2;
     //public GameObject PackSpace3;
     //public GameObject PackSpace4;
     //public GameObject PackSpace5;
     //public GameObject PackSpace6;
 
-
+    public Vector3 BuyArea;
 
     public void BuySword()
     {
@@ -35,13 +37,34 @@ public class Buy : MonoBehaviour
             //Sword.SetActive(true);
             //Sword.transform.position = PackSpace1.transform.position;
             
-
-            Instantiate(Sword);
+           // Instantiate(Sword);
+           Sword = (GameObject)Instantiate(Sword,BuyArea, Quaternion.identity);
+            
+        }
+        if (AmountOfSwords <= 0)
+        {
+            SwordButton.interactable = false;
         }
     }
+
+    public void SellSword() 
+    {
+    Money = Money + 30;
+    Balance.text = Money.ToString();
+
+    AmountOfSwords = AmountOfSwords + 1;
+    SwordAmount.text = AmountOfSwords.ToString();
+
+        //DestroyImmediate(Sword);
+      
+    }
+
+
+
     public Text SheildAmount;
     public int AmountOfSheilds;
     public GameObject Shiled;
+    public Button ShieldButton;
     public void BuySehild() 
     { 
         if (Money >= 25)
@@ -53,32 +76,48 @@ public class Buy : MonoBehaviour
             SheildAmount.text = AmountOfSheilds.ToString();
 
             //Shiled.SetActive(true);
-            Instantiate(Shiled);
+            //Instantiate(Shiled);
+            Shiled = (GameObject)Instantiate(Shiled, BuyArea, Quaternion.identity);
 
+        }
+
+        if(AmountOfSheilds <= 0) 
+        {
+        ShieldButton.interactable = false;
         }
     }
     public Text PositionAmount;
     public int AmountOfPosition;
     public GameObject Position;
-
-    public void BuyPosition() 
+    public Button PotionButton;
+    public void BuyPosition()
     {
-    if (Money >= 5) 
+        if (Money >= 5)
         {
             Money = Money - 5;
-            Balance.text=Money.ToString();
+            Balance.text = Money.ToString();
 
             AmountOfPosition = AmountOfPosition - 1;
             PositionAmount.text = AmountOfPosition.ToString();
 
             //Position.SetActive(true);
-            Instantiate(Position);
+            //Instantiate(Position);
+            Position = (GameObject)Instantiate(Position, BuyArea, Quaternion.identity);
+        }
+
+        if (AmountOfPosition <= 0) 
+        {
+            Debug.Log("stop");   
+            PotionButton.interactable = false;
         }
     }
+
+   
 
     public Text ArmorAmount;
     public int AmountOfArmor;
     public GameObject Armor;
+    public Button ArmorButton;
 
     public void BuyArmor() 
     {
@@ -91,7 +130,12 @@ public class Buy : MonoBehaviour
         ArmorAmount.text = AmountOfArmor.ToString();
 
             //Armor.SetActive(true);
-            Instantiate(Armor);
+            // Instantiate(Armor);
+            Armor = (GameObject)Instantiate(Armor, BuyArea, Quaternion.identity);
+        }
+        if (AmountOfArmor <= 0)
+        {
+            ArmorButton.interactable = false;
         }
     }
 

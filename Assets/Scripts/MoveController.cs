@@ -5,11 +5,11 @@ using UnityEngine.EventSystems;
 
 public class MoveController : MonoBehaviour ,IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    Vector3 offset;
+    //Vector3 offset;
     //Collider2D collider2D;
     //public string TagPoint = "DropPoint";
 
-    //private void OnMouseDown()
+    //private void OnMouseDown() 
     //{
     //    offset = transform.position - MousWorldPos();
     //}
@@ -19,11 +19,11 @@ public class MoveController : MonoBehaviour ,IBeginDragHandler, IDragHandler, IE
     //    transform.position = MousWorldPos() + offset;
     //}
 
-    //private void OnMouseUp()
+   // private void OnMouseUp()
     //{
-    //    collider2D.enabled = false;
+   // /   collider2D.enabled = false;
     //    var rayOrigin = Camera.main.transform.position;
-    //    var rayDirection = MousWorldPos() - Camera.main.transform.position;
+   // /   var rayDirection = MousWorldPos() - Camera.main.transform.position;
     //    RaycastHit2D hitInfo;
 
     //    if (hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
