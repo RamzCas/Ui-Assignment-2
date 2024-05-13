@@ -50,13 +50,16 @@ public class CameraSwitch : MonoBehaviour
     }
 
 
-    public float Calculation(float celsius)
+   
+    // I work in class lol
+
+    /* public float Calculation(float celsius)
     {
      float thatNumber = 273.15f;
      float kelvin = celsius + thatNumber;
 
         return kelvin;
  
-    }
+    }*/
 
 }
