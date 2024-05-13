@@ -7,6 +7,15 @@ using Unity.VisualScripting;
 
 public class Buy : MonoBehaviour
 {
+    public RectTransform ParentRec;
+
+    private void Start()
+    {
+     
+    }
+
+
+
     public Text Balance;
     public int Money;
     public Text SwordAmount;
@@ -49,6 +58,11 @@ public class Buy : MonoBehaviour
         {
             SwordButton.interactable = false;
         }
+
+        if(AmountOfSwords >= 1) 
+        {
+            SwordButton.interactable = true; 
+        }
     }
 
     public GameObject Parent;
@@ -58,7 +72,7 @@ public class Buy : MonoBehaviour
        GameObject NewSpawnSword = Instantiate(Sword,BuyArea,Quaternion.identity);
        NewSpawnSword.transform.parent = Parent.transform;
        //swordPng.rectTransform.sizeDelta = new Vector2(1, 1);
-       SwordRec.localScale = scale;
+             
 
     }
 
@@ -101,6 +115,11 @@ public class Buy : MonoBehaviour
         {
         ShieldButton.interactable = false;
         }
+
+        if (AmountOfSheilds >= 1)
+        {
+            ShieldButton.interactable = true;
+        }
     }
     public void SpawnShield()
     {
@@ -142,6 +161,11 @@ public class Buy : MonoBehaviour
         {
             Debug.Log("stop");   
             PotionButton.interactable = false;
+
+            if (AmountOfPosition >= 1)
+            {
+                PotionButton.interactable = true;
+            }
         }
     }
 
@@ -184,6 +208,11 @@ public class Buy : MonoBehaviour
         if (AmountOfArmor <= 0)
         {
             ArmorButton.interactable = false;
+        }
+
+        if(AmountOfArmor >= 1) 
+        {
+        ArmorButton.interactable=true;
         }
     }
 
