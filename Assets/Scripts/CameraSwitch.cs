@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraSwitch : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class CameraSwitch : MonoBehaviour
     public GameObject Item3;
     public GameObject Item4;
 
+    public GameObject ShopText;
+    public GameObject BabckpackText;
+    public GameObject BabckpackText2;
+
+    public GameObject SwitchToChestText;
+
+    public GameObject Instructios;
     public void SwitchToShop() 
      {
         Camera.main.transform.position = Shop;
@@ -22,6 +30,15 @@ public class CameraSwitch : MonoBehaviour
         Item2.SetActive(true);
         Item3.SetActive(true);
         Item4.SetActive(true);
+
+        ShopText.SetActive(true);
+        BabckpackText.SetActive(true);
+
+        SwitchToChestText.SetActive(true);
+
+        Instructios.SetActive(true);
+
+        BabckpackText2.SetActive(false);
      }
 
      public void SwitchToPack()
@@ -31,6 +48,15 @@ public class CameraSwitch : MonoBehaviour
         Item2.SetActive(false);
         Item3.SetActive(false);
         Item4.SetActive(false);
+
+        ShopText.SetActive(false);
+        BabckpackText.SetActive(false);
+
+        SwitchToChestText.SetActive(false);
+
+        Instructios.SetActive(false);
+
+        BabckpackText2.SetActive(true);
      }
 
 

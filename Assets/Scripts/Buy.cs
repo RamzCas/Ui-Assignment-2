@@ -16,7 +16,7 @@ public class Buy : MonoBehaviour
 
     public Button SwordButton;
 
-    public GameObject PackSpace1;
+    //public GameObject PackSpace1;
     //public GameObject PackSpace2;
     //public GameObject PackSpace3;
     //public GameObject PackSpace4;
@@ -50,10 +50,11 @@ public class Buy : MonoBehaviour
         }
     }
 
+    public GameObject Parent;
     public void SpawnSword() 
     {
        GameObject NewSpawnSword = Instantiate(Sword,BuyArea,Quaternion.identity);
-       NewSpawnSword.transform.parent = transform;
+       NewSpawnSword.transform.parent = Parent.transform;
     }
 
     public void RefundSword() 

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 433689529318977757}
   - component: {fileID: 154225666568970388}
   - component: {fileID: 1657665806755084193}
-  - component: {fileID: -5819380811522546440}
   m_Layer: 0
   m_Name: postion
   m_TagString: Potion
@@ -149,16 +148,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5819380811522546440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668622047741435937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17fc2ff51c92d704b889f606c3f630c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TagPoint: DropPoint
