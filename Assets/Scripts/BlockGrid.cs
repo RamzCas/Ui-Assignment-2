@@ -21,9 +21,32 @@ public class BlockGrid : MonoBehaviour
              Debug.Log("Placed");
          }
      }*/
+    private bool isObjectSelected = false;
+    private GameObject selectedObject;
+    private Vector3 initialObjectPos;
 
     public void Update()
     {
+        if (Input.GetMouseButtonDown(0)) 
+        {
+           // Debug.Log("click");
+            Vector2 raycastPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(raycastPoint, Vector2.zero);
+
+            if (hit.collider != null) 
+            {
+            if(hit.collider.CompareTag("Sword")) 
+                {
+                    Debug.Log("Move Sword");
+                    /* selectedObject = hit.collider.gameObject;
+                     initialObjectPos = selectedObject.transform.position;
+                     isObjectSelected = true;*/
+                    GameObject swordObject = hit.collider.gameObject;
+                    swordObject.transform.position = Pack1.transform.position;
+                }
+            }
+        }
+
         
         
     }

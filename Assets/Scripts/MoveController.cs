@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class MoveController : MonoBehaviour
 {
-    Vector3 offset;
+    //Vector3 offset;
    // Collider2D collider2D;
     //public string TagPoint = "DropPoint";
 
@@ -20,8 +20,8 @@ public class MoveController : MonoBehaviour
        
    
 
-    private void OnMouseUp()
-    {
+   // private void OnMouseUp()
+  //  {
      /*  collider2D.enabled = false;
         var rayOrigin = Camera.main.transform.position;
        var rayDirection = MousWorldPos() - Camera.main.transform.position;
@@ -35,7 +35,7 @@ public class MoveController : MonoBehaviour
            }
        }
 
-       collider2D.enabled = true;*/
+       collider2D.enabled = true;
     }
 
 
@@ -44,7 +44,7 @@ public class MoveController : MonoBehaviour
         var mouseScreenPos = Input.mousePosition;
         mouseScreenPos.z = Camera.main.WorldToScreenPoint(transform.position).z;
         return Camera.main.ScreenToWorldPoint(mouseScreenPos);
-     }
+     }*/
 
    
 }
