@@ -4,19 +4,33 @@ using UnityEngine;
 
 public class CameraSwitch : MonoBehaviour
 {
-    public GameObject ShopCam;
-    public GameObject PackCam;
+    //public GameObject ShopCam;
+   // public GameObject PackCam;
+
+    public Vector3 Inventory;
+    public Vector3 Shop;
+
+    public GameObject Item1;
+    public GameObject Item2;
+    public GameObject Item3;
+    public GameObject Item4;
 
     public void SwitchToShop() 
      {
-     PackCam.SetActive(false);
-     ShopCam.SetActive(true);
+        Camera.main.transform.position = Shop;
+        Item1.SetActive(true);
+        Item2.SetActive(true);
+        Item3.SetActive(true);
+        Item4.SetActive(true);
      }
 
      public void SwitchToPack()
-     { 
-     PackCam.SetActive(true); 
-     ShopCam.SetActive(false);
+     {
+        Camera.main.transform.position = Inventory;
+        Item1.SetActive(false);
+        Item2.SetActive(false);
+        Item3.SetActive(false);
+        Item4.SetActive(false);
      }
 
 

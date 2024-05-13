@@ -2103,8 +2103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c377ec08bb82a46802440a014ee690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopCam: {fileID: 519420028}
-  PackCam: {fileID: 0}
+  Inventory: {x: 12.45, y: 0, z: -10}
+  Shop: {x: 0, y: 0, z: -10}
+  Item1: {fileID: 602224967}
+  Item2: {fileID: 1222407838}
+  Item3: {fileID: 780846934}
+  Item4: {fileID: 1751531628}
 --- !u!1 &837563962
 GameObject:
   m_ObjectHideFlags: 0

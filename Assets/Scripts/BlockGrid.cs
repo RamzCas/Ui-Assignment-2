@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockGrid : MonoBehaviour
-{
+{/*
 
     public GameObject Pack1;
     public GameObject Pack2;
@@ -20,7 +20,7 @@ public class BlockGrid : MonoBehaviour
          coll.transform.position = transform.position;
              Debug.Log("Placed");
          }
-     }*/
+     }
     private bool isObjectSelected = false;
     private GameObject selectedObject;
     private Vector3 initialObjectPos;
@@ -38,9 +38,9 @@ public class BlockGrid : MonoBehaviour
             if(hit.collider.CompareTag("Sword")) 
                 {
                     Debug.Log("Move Sword");
-                    /* selectedObject = hit.collider.gameObject;
+                     selectedObject = hit.collider.gameObject;
                      initialObjectPos = selectedObject.transform.position;
-                     isObjectSelected = true;*/
+                     isObjectSelected = true;
                     GameObject swordObject = hit.collider.gameObject;
                     swordObject.transform.position = Pack1.transform.position;
                 }
@@ -49,5 +49,5 @@ public class BlockGrid : MonoBehaviour
 
         
         
-    }
+    }*/
 }
