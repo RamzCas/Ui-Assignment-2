@@ -24,6 +24,7 @@ public class Buy : MonoBehaviour
     //public GameObject PackSpace6;
 
     public Vector3 BuyArea;
+    public Vector3 scale;
 
     public void BuySword()
     {
@@ -51,10 +52,14 @@ public class Buy : MonoBehaviour
     }
 
     public GameObject Parent;
+    public RectTransform SwordRec;
     public void SpawnSword() 
     {
        GameObject NewSpawnSword = Instantiate(Sword,BuyArea,Quaternion.identity);
        NewSpawnSword.transform.parent = Parent.transform;
+       //swordPng.rectTransform.sizeDelta = new Vector2(1, 1);
+       SwordRec.localScale = scale;
+
     }
 
     public void RefundSword() 
@@ -100,7 +105,7 @@ public class Buy : MonoBehaviour
     public void SpawnShield()
     {
         GameObject NewSpawnSword = Instantiate(Shiled, BuyArea, Quaternion.identity);
-        NewSpawnSword.transform.parent = transform;
+        NewSpawnSword.transform.parent = Parent.transform;
     }
 
     public void RefundSheild()
@@ -143,7 +148,8 @@ public class Buy : MonoBehaviour
     public void SpawnPotion()
     {
         GameObject NewSpawnSword = Instantiate(Position, BuyArea, Quaternion.identity);
-        NewSpawnSword.transform.parent = transform;
+        NewSpawnSword.transform.parent = Parent.transform;
+      
     }
 
     public void RefundPotion()
@@ -184,7 +190,7 @@ public class Buy : MonoBehaviour
     public void SpawnArmour()
     {
         GameObject NewSpawnSword = Instantiate(Armor, BuyArea, Quaternion.identity);
-        NewSpawnSword.transform.parent = transform;
+        NewSpawnSword.transform.parent = Parent.transform;
     }
 
     public void RefundArmour()

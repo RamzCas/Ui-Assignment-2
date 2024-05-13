@@ -23,6 +23,25 @@ public class CameraSwitch : MonoBehaviour
     public GameObject SwitchToChestText;
 
     public GameObject Instructios;
+
+    public GameObject BackPack;
+    public Vector3 packPosInShopView;
+    public Vector3 packPosOinPackView;
+
+    public RectTransform PackRec;
+
+    public GameObject BuyArea;
+
+    public GameObject Refund;
+    public GameObject RefundText;
+
+    public GameObject Chest;
+    public GameObject ChestText;
+
+    public GameObject TextSwitchPack;
+    public GameObject TextSwitchShop;
+
+
     public void SwitchToShop() 
      {
         Camera.main.transform.position = Shop;
@@ -39,6 +58,17 @@ public class CameraSwitch : MonoBehaviour
         Instructios.SetActive(true);
 
         BabckpackText2.SetActive(false);
+        PackRec.anchoredPosition = packPosInShopView;
+
+        BuyArea.SetActive(true);
+
+        Refund.SetActive(true);
+        RefundText.SetActive(true);
+
+        Chest.SetActive(false);
+        ChestText.SetActive(false);
+
+        TextSwitchPack.SetActive(true);
      }
 
      public void SwitchToPack()
@@ -57,6 +87,19 @@ public class CameraSwitch : MonoBehaviour
         Instructios.SetActive(false);
 
         BabckpackText2.SetActive(true);
+
+        PackRec.anchoredPosition = packPosOinPackView;
+
+        BuyArea.SetActive (false);
+
+        Refund.SetActive(false);
+        RefundText.SetActive(false);
+
+        Chest.SetActive(true);
+        ChestText.SetActive(true);
+
+        TextSwitchPack.SetActive(false);
+        TextSwitchShop.SetActive(true);
      }
 
 
