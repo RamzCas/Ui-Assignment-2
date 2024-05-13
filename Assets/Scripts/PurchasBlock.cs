@@ -13,21 +13,14 @@ public class PurchasBlock : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject) 
+        if (coll.gameObject)
         {
             Debug.Log("Purchas In Progress");
             Item1.interactable = false;
             Item2.interactable = false;
             Item3.interactable = false;
             Item4.interactable = false;
-
-        }  
-        
-       /* if (Input.GetKeyDown(KeyCode.Tab))  
-        {
-        Destroy(gameObject);
-            Debug.Log("Cancel");
-        }*/
+        }
     }
 
     private void OnTriggerExit2D(Collider2D coll)
@@ -39,8 +32,6 @@ public class PurchasBlock : MonoBehaviour
         Item4.interactable= true;
     }
 
-    public void Cancel() 
-    {
-     
-    }
+   
+
 }

@@ -11,7 +11,9 @@ public class Buy : MonoBehaviour
     public int Money;
     public Text SwordAmount;
     public int AmountOfSwords;
+
     public GameObject Sword;
+
     public Button SwordButton;
 
     public GameObject PackSpace1;
@@ -38,8 +40,9 @@ public class Buy : MonoBehaviour
             //Sword.transform.position = PackSpace1.transform.position;
             
            // Instantiate(Sword);
-           Sword = (GameObject)Instantiate(Sword,BuyArea, Quaternion.identity);
-            
+           //Sword = (GameObject) Instantiate(Sword,BuyArea,Quaternion.identity);
+           SpawnSword();
+          
         }
         if (AmountOfSwords <= 0)
         {
@@ -47,7 +50,13 @@ public class Buy : MonoBehaviour
         }
     }
 
-    public void SellSword() 
+    public void SpawnSword() 
+    {
+       GameObject NewSpawnSword = Instantiate(Sword,BuyArea,Quaternion.identity);
+       NewSpawnSword.transform.parent = transform;
+    }
+
+    public void RefundSword() 
     {
     Money = Money + 30;
     Balance.text = Money.ToString();
@@ -77,7 +86,8 @@ public class Buy : MonoBehaviour
 
             //Shiled.SetActive(true);
             //Instantiate(Shiled);
-            Shiled = (GameObject)Instantiate(Shiled, BuyArea, Quaternion.identity);
+            //Shiled = (GameObject)Instantiate(Shiled, BuyArea, Quaternion.identity);
+            SpawnShield();
 
         }
 
@@ -86,6 +96,22 @@ public class Buy : MonoBehaviour
         ShieldButton.interactable = false;
         }
     }
+    public void SpawnShield()
+    {
+        GameObject NewSpawnSword = Instantiate(Shiled, BuyArea, Quaternion.identity);
+        NewSpawnSword.transform.parent = transform;
+    }
+
+    public void RefundSheild()
+    {
+        Money = Money + 25;
+        Balance.text = Money.ToString();
+
+        AmountOfSheilds = AmountOfSheilds + 1;
+        SheildAmount.text = AmountOfSheilds.ToString();
+
+    }
+
     public Text PositionAmount;
     public int AmountOfPosition;
     public GameObject Position;
@@ -102,7 +128,8 @@ public class Buy : MonoBehaviour
 
             //Position.SetActive(true);
             //Instantiate(Position);
-            Position = (GameObject)Instantiate(Position, BuyArea, Quaternion.identity);
+            //Position = (GameObject)Instantiate(Position, BuyArea, Quaternion.identity);
+            SpawnPotion();
         }
 
         if (AmountOfPosition <= 0) 
@@ -112,7 +139,20 @@ public class Buy : MonoBehaviour
         }
     }
 
-   
+    public void SpawnPotion()
+    {
+        GameObject NewSpawnSword = Instantiate(Position, BuyArea, Quaternion.identity);
+        NewSpawnSword.transform.parent = transform;
+    }
+
+    public void RefundPotion()
+    {
+        Money = Money + 5;
+        Balance.text = Money.ToString();
+
+        AmountOfPosition = AmountOfPosition + 1;
+        PositionAmount.text = AmountOfPosition.ToString();
+    }
 
     public Text ArmorAmount;
     public int AmountOfArmor;
@@ -131,7 +171,8 @@ public class Buy : MonoBehaviour
 
             //Armor.SetActive(true);
             // Instantiate(Armor);
-            Armor = (GameObject)Instantiate(Armor, BuyArea, Quaternion.identity);
+            //Armor = (GameObject)Instantiate(Armor, BuyArea, Quaternion.identity);
+            SpawnArmour();
         }
         if (AmountOfArmor <= 0)
         {
@@ -139,7 +180,20 @@ public class Buy : MonoBehaviour
         }
     }
 
-    
+    public void SpawnArmour()
+    {
+        GameObject NewSpawnSword = Instantiate(Armor, BuyArea, Quaternion.identity);
+        NewSpawnSword.transform.parent = transform;
+    }
+
+    public void RefundArmour()
+    {
+        Money = Money + 50;
+        Balance.text = Money.ToString();
+
+        AmountOfArmor = AmountOfArmor + 1;
+        ArmorAmount.text = AmountOfArmor.ToString();
+    }
 
     //public void BackPackView() 
     //{

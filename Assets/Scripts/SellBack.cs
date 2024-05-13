@@ -18,13 +18,13 @@ public class SellBack : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        /*if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("Refund");
             
           
            
-        }
+        }*/
     }
 
     Vector3 MousWorldPos()

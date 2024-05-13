@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Sword
   - DropPoint
+  - Sheild
+  - Potion
+  - Armour
   layers:
   - Default
   - TransparentFX
