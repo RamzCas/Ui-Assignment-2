@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 5836997881232076995}
   - component: {fileID: 6568701460117687543}
   m_Layer: 5
-  m_Name: TestSword
-  m_TagString: Sword
+  m_Name: TestDagger
+  m_TagString: Dagger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.58431375, g: 0.8000001, b: 0.80392164, a: 1}
+  m_Color: {r: 0.7568628, g: 0.25882354, b: 0.2901961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

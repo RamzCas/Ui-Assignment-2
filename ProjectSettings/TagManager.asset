@@ -9,6 +9,9 @@ TagManager:
   - Sheild
   - Potion
   - Armour
+  - Arrow
+  - Dagger
+  - TheOnePiece
   layers:
   - Default
   - TransparentFX

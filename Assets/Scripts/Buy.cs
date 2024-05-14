@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
+
 
 public class Buy : MonoBehaviour
 {
@@ -14,10 +11,8 @@ public class Buy : MonoBehaviour
      
     }
 
-
-
     public Text Balance;
-    public int Money;
+    public int Money = 100;
     public Text SwordAmount;
     public int AmountOfSwords;
 
@@ -54,15 +49,7 @@ public class Buy : MonoBehaviour
            SpawnSword();
           
         }
-        if (AmountOfSwords <= 0)
-        {
-            SwordButton.interactable = false;
-        }
-
-        if(AmountOfSwords >= 1) 
-        {
-            SwordButton.interactable = true; 
-        }
+      
     }
 
     public GameObject Parent;
@@ -111,15 +98,7 @@ public class Buy : MonoBehaviour
 
         }
 
-        if(AmountOfSheilds <= 0) 
-        {
-        ShieldButton.interactable = false;
-        }
-
-        if (AmountOfSheilds >= 1)
-        {
-            ShieldButton.interactable = true;
-        }
+       
     }
     public void SpawnShield()
     {
@@ -157,16 +136,8 @@ public class Buy : MonoBehaviour
             SpawnPotion();
         }
 
-        if (AmountOfPosition <= 0) 
-        {
-            Debug.Log("stop");   
-            PotionButton.interactable = false;
-
-            if (AmountOfPosition >= 1)
-            {
-                PotionButton.interactable = true;
-            }
-        }
+      
+        
     }
 
     public void SpawnPotion()
@@ -192,27 +163,20 @@ public class Buy : MonoBehaviour
 
     public void BuyArmor() 
     {
-    if(Money >= 50) 
+        if (Money >= 50)
         {
-        Money = Money - 50;
-        Balance.text=Money.ToString();
+            Money = Money - 50;
+            Balance.text = Money.ToString();
 
-        AmountOfArmor = AmountOfArmor - 1;  
-        ArmorAmount.text = AmountOfArmor.ToString();
+            AmountOfArmor = AmountOfArmor - 1;
+            ArmorAmount.text = AmountOfArmor.ToString();
 
             //Armor.SetActive(true);
             // Instantiate(Armor);
             //Armor = (GameObject)Instantiate(Armor, BuyArea, Quaternion.identity);
             SpawnArmour();
-        }
-        if (AmountOfArmor <= 0)
-        {
-            ArmorButton.interactable = false;
-        }
 
-        if(AmountOfArmor >= 1) 
-        {
-        ArmorButton.interactable=true;
+          
         }
     }
 
@@ -231,41 +195,168 @@ public class Buy : MonoBehaviour
         ArmorAmount.text = AmountOfArmor.ToString();
     }
 
-    //public void BackPackView() 
-    //{
-    //    SceneManager.LoadScene("BackPack");
-    //}
+    public Text ArrowAmount;
+    public int AmountOfArrows;
+    public GameObject Arrow;
+    public Button ArrowButton;
 
-    //private void OnTriggerEnter2D(Collider2D coll)
-    //{
-    //    if(coll.gameObject == PackSpace1) 
-    //    { 
-    //     gameObject.transform.position = PackSpace2.transform.position;
-    //    }
+    public void BuyArrow()
+    {
+        if (Money >= 15)
+        {
+            Money = Money - 15;
+            Balance.text = Money.ToString();
 
-    //    else if(coll.gameObject == PackSpace2) 
-    //    {
-    //    gameObject.transform.position=PackSpace3.transform.position;
-    //    }
+            AmountOfArrows = AmountOfArrows - 1;
+            ArrowAmount.text = AmountOfArrows.ToString();
 
-    //    else if (coll.gameObject == PackSpace3) 
-    //    {
-    //    gameObject.transform.position = PackSpace4.transform.position;
-    //    }
+            SpawnArrow();   
+        }
+    }
+    public void SpawnArrow()
+    {
+        GameObject NewSpawnSword = Instantiate(Arrow, BuyArea, Quaternion.identity);
+        NewSpawnSword.transform.parent = Parent.transform;
+    }
 
-    //    else if (coll.gameObject == PackSpace4)
-    //    {
-    //    gameObject.transform.position = PackSpace5.transform.position;
-    //    }
+    public void RefundArrow() 
+    {
+        Money = Money + 15;
+        Balance.text = Money.ToString();
 
-    //    else if( coll.gameObject == PackSpace5) 
-    //    {
-    //    gameObject.transform.position = PackSpace6.transform.position;
-    //    }
+        AmountOfArrows = AmountOfArrows + 1;
+        ArrowAmount.text = AmountOfArrows.ToString();
+    }
 
-    //    else 
-    //    {
-    //        return;
-    //    }
-    //}
+
+    public Text DaggerAmount;
+    public int AmountOfDaggers;
+    public GameObject Dagger;
+    public Button DaggerButton;
+    public void BuyDagger()
+    {
+        if (Money >= 75)
+        {
+            Money = Money - 75;
+            Balance.text = Money.ToString();
+
+            AmountOfDaggers = AmountOfDaggers - 1;
+            DaggerAmount.text = AmountOfDaggers.ToString();
+
+            SpawnDagger();
+        }
+    }
+    public void SpawnDagger()
+    {
+        GameObject NewSpawnSword = Instantiate(Dagger, BuyArea, Quaternion.identity);
+        NewSpawnSword.transform.parent = Parent.transform;
+    }
+
+    public void RefundDagger()
+    {
+        Money = Money + 75;
+        Balance.text = Money.ToString();
+
+        AmountOfDaggers = AmountOfDaggers + 1;
+        DaggerAmount.text = AmountOfDaggers.ToString();
+    }
+
+    public Text OnePieceAmount;
+    public int AmountOfOnePiece;
+    public GameObject OnePiece;
+    public Button OnePieceButton;
+
+    public void BuyOnePiece()
+    {
+        if (Money >= 100)
+        {
+            Money = Money - 100;
+            Balance.text = Money.ToString();
+
+            AmountOfOnePiece = AmountOfOnePiece - 1;
+            OnePieceAmount.text = AmountOfOnePiece.ToString();
+
+            SpawnOnePiece();
+        }
+    }
+    public void SpawnOnePiece()
+    {
+        GameObject NewSpawnSword = Instantiate(OnePiece, BuyArea, Quaternion.identity);
+        NewSpawnSword.transform.parent = Parent.transform;
+    }
+
+    public void RefundOnePiece()
+    {
+        Money = Money + 100;
+        Balance.text = Money.ToString();
+
+        AmountOfOnePiece = AmountOfOnePiece + 1;
+        OnePieceAmount.text = AmountOfOnePiece.ToString();
+    }
+
+    public void Update()
+    {
+        if (AmountOfArmor <= 0)
+        {
+            ArmorButton.interactable = false;
+            //Debug.Log("OutofStock");
+        }
+
+        if (AmountOfArmor > 0)
+        {
+            ArmorButton.interactable = true;
+            //Debug.Log("Back In Stock");
+        }
+
+
+        if (AmountOfSwords <= 0)
+        {
+            SwordButton.interactable = false;
+        }
+
+        if (AmountOfSwords > 0)
+        {
+            SwordButton.interactable = true;
+        }
+
+
+        if (AmountOfSheilds <= 0)
+        {
+            ShieldButton.interactable = false;
+        }
+
+        if (AmountOfSheilds > 0)
+        {
+            ShieldButton.interactable = true;
+        }
+
+        if (AmountOfPosition <= 0)
+        {
+            PotionButton.interactable = false;
+        }
+        if (AmountOfPosition > 0)
+        {
+            PotionButton.interactable = true;
+        }
+
+        if (AmountOfArrows <= 0)
+        { ArrowButton.interactable = false; }
+
+        if (AmountOfArrows > 0)
+        { ArrowButton.interactable = true; }
+
+        if(AmountOfDaggers <= 0)
+        {DaggerButton.interactable = false; }
+
+        if(AmountOfDaggers > 0)
+        {  DaggerButton.interactable = true; }
+
+        if(AmountOfOnePiece <= 0)
+        { OnePieceButton.interactable = false; }
+
+        if(AmountOfOnePiece > 0)
+        {OnePieceButton.interactable = true; }
+    }
+
+    
 }

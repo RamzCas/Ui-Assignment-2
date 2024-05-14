@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -38,6 +36,27 @@ public class FinalSellBack : MonoBehaviour, IDropHandler
         {
             Debug.Log("armour");
             sell.RefundArmour();
+            Destroy(dropped);
+        }
+
+        if(dropped.CompareTag("Arrow"))
+        {
+            Debug.Log("Arrow");
+            sell.RefundArrow(); 
+            Destroy(dropped);
+        }
+
+        if (dropped.CompareTag("Dagger")) 
+        {
+            Debug.Log("Dagger");
+            sell.RefundDagger();
+            Destroy(dropped);
+        }
+
+        if (dropped.CompareTag("TheOnePiece"))
+        {
+            Debug.Log("OnePiece");
+            sell.RefundOnePiece();
             Destroy(dropped);
         }
 
