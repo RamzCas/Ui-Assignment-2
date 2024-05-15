@@ -45,12 +45,17 @@ public class CameraSwitch : MonoBehaviour
     public GameObject Chest;
     public GameObject ChestText;
 
+   
+
     // public GameObject TextSwitchPack;
     //public GameObject TextSwitchShop;
 
     public GameObject PackViewButton;
     public GameObject ShopviewButton;
 
+
+    public GameObject BuySpace;
+ 
     public void SwitchToShop() 
      {
         Camera.main.transform.position = Shop;
@@ -88,6 +93,10 @@ public class CameraSwitch : MonoBehaviour
 
         ShopviewButton.SetActive(false);
         PackViewButton.SetActive(true);
+
+        BuySpace.SetActive(false);
+
+       
      }
 
      public void SwitchToPack()
@@ -126,6 +135,10 @@ public class CameraSwitch : MonoBehaviour
 
         ShopviewButton.SetActive(true);
         PackViewButton.SetActive(false);
+
+        BuySpace.SetActive(true);
+
+        
     }
 
 

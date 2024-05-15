@@ -294,8 +294,77 @@ public class Buy : MonoBehaviour
         OnePieceAmount.text = AmountOfOnePiece.ToString();
     }
 
-    public void Update()
+
+    public int AmountOfSPace;
+    public Text SpaceAmount;
+    public GameObject InventorySlot;
+    public Button InventorySlotButton;
+
+    public GameObject ChestParent;
+    private int SpaceCounter;
+
+    public GameObject slot1;
+    public GameObject slot2;
+    public GameObject slot3;
+    public GameObject slot4;
+
+
+    public void BuySpace()
     {
+        SpaceCounter++;
+        if (SpaceCounter == 1)
+        {
+            Money = Money - 10;
+            Balance.text = Money.ToString();
+
+            AmountOfSPace = AmountOfSPace - 1;
+            SpaceAmount.text = AmountOfSPace.ToString();
+
+            slot1.SetActive(true);
+        }
+        if (SpaceCounter == 2)
+        {
+            Money = Money - 10;
+            Balance.text = Money.ToString();
+
+            AmountOfSPace = AmountOfSPace - 1;
+            SpaceAmount.text = AmountOfSPace.ToString();
+
+            slot2.SetActive(true);
+        }
+        if (SpaceCounter == 3)
+        {
+            Money = Money - 10;
+            Balance.text = Money.ToString();
+
+            AmountOfSPace = AmountOfSPace - 1;
+            SpaceAmount.text = AmountOfSPace.ToString();
+
+            slot3.SetActive(true);
+        }
+        if (SpaceCounter == 4)
+        {
+            Money = Money - 10;
+            Balance.text = Money.ToString();
+
+            AmountOfSPace = AmountOfSPace - 1;
+            SpaceAmount.text = AmountOfSPace.ToString();
+
+            slot4.SetActive(true);
+        }
+    }
+
+    public void SpawnOneSpace()
+    {
+        GameObject NewSpawnSword = Instantiate(InventorySlot, BuyArea, Quaternion.identity);
+        NewSpawnSword.transform.parent = ChestParent.transform;
+    }
+
+    public void Update()
+{
+        if(AmountOfSPace <= 0)
+        { InventorySlotButton.interactable = false; }
+
         if (AmountOfArmor <= 0)
         {
             ArmorButton.interactable = false;
