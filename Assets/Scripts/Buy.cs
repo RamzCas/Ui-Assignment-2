@@ -312,45 +312,48 @@ public class Buy : MonoBehaviour
     public void BuySpace()
     {
         SpaceCounter++;
-        if (SpaceCounter == 1)
+        if (Money >= 10)
         {
-            Money = Money - 10;
-            Balance.text = Money.ToString();
+            if (SpaceCounter == 1)
+            {
+                Money = Money - 10;
+                Balance.text = Money.ToString();
 
-            AmountOfSPace = AmountOfSPace - 1;
-            SpaceAmount.text = AmountOfSPace.ToString();
+                AmountOfSPace = AmountOfSPace - 1;
+                SpaceAmount.text = AmountOfSPace.ToString();
 
-            slot1.SetActive(true);
-        }
-        if (SpaceCounter == 2)
-        {
-            Money = Money - 10;
-            Balance.text = Money.ToString();
+                slot1.SetActive(true);
+            }
+            if (SpaceCounter == 2)
+            {
+                Money = Money - 10;
+                Balance.text = Money.ToString();
 
-            AmountOfSPace = AmountOfSPace - 1;
-            SpaceAmount.text = AmountOfSPace.ToString();
+                AmountOfSPace = AmountOfSPace - 1;
+                SpaceAmount.text = AmountOfSPace.ToString();
 
-            slot2.SetActive(true);
-        }
-        if (SpaceCounter == 3)
-        {
-            Money = Money - 10;
-            Balance.text = Money.ToString();
+                slot2.SetActive(true);
+            }
+            if (SpaceCounter == 3)
+            {
+                Money = Money - 10;
+                Balance.text = Money.ToString();
 
-            AmountOfSPace = AmountOfSPace - 1;
-            SpaceAmount.text = AmountOfSPace.ToString();
+                AmountOfSPace = AmountOfSPace - 1;
+                SpaceAmount.text = AmountOfSPace.ToString();
 
-            slot3.SetActive(true);
-        }
-        if (SpaceCounter == 4)
-        {
-            Money = Money - 10;
-            Balance.text = Money.ToString();
+                slot3.SetActive(true);
+            }
+            if (SpaceCounter == 4)
+            {
+                Money = Money - 10;
+                Balance.text = Money.ToString();
 
-            AmountOfSPace = AmountOfSPace - 1;
-            SpaceAmount.text = AmountOfSPace.ToString();
+                AmountOfSPace = AmountOfSPace - 1;
+                SpaceAmount.text = AmountOfSPace.ToString();
 
-            slot4.SetActive(true);
+                slot4.SetActive(true);
+            }
         }
     }
 
@@ -362,8 +365,11 @@ public class Buy : MonoBehaviour
 
     public void Update()
 {
-        if(AmountOfSPace <= 0)
+        if(Money < 10)
         { InventorySlotButton.interactable = false; }
+
+        if (Money > 10)
+        { InventorySlotButton.interactable = true; }
 
         if (AmountOfArmor <= 0)
         {
